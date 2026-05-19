@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Set a deliberate AI crawler policy | AI Search OS</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-logo">SEMRUSH</div>
+  <span class="topbar-divider">|</span>
+  <div class="topbar-course">AI Search Operating System &nbsp;›&nbsp; Course 2: Discoverability</div>
+  <div class="topbar-spacer"></div>
+  <div class="topbar-progress">Lesson 2.8 of 13 · 62% complete</div>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-course-title">Course 2 — Discoverability</div>
+    <div class="sidebar-course-sub">AI can only recommend what it can find.</div>
+
+    <div class="sidebar-group">
+      <ul class="lesson-list">
+        <li class="done"><span class="lesson-num">2.1</span><span class="lesson-title-sb">Introduction to Discoverability</span></li>
+        <li class="done"><span class="lesson-num">2.2</span><span class="lesson-title-sb">How AI Platforms Work</span></li>
+        <li class="done"><span class="lesson-num">2.3</span><span class="lesson-title-sb">How to act on Discoverability</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">Best Practices</div>
+      <ul class="lesson-list">
+        <li class="done"><span class="lesson-num">2.4</span><span class="lesson-title-sb">Technical SEO audit</span></li>
+        <li class="done"><span class="lesson-num">2.5</span><span class="lesson-title-sb">Content audit for AI extraction</span></li>
+        <li class="done"><span class="lesson-num">2.6</span><span class="lesson-title-sb">Make content extractable from HTML</span></li>
+        <li class="done"><span class="lesson-num">2.7</span><span class="lesson-title-sb">Passage-level content optimization</span></li>
+        <li class="current"><span class="lesson-num">2.8</span><span class="lesson-title-sb">Set a deliberate AI crawler policy</span></li>
+        <li><span class="lesson-num">2.9</span><span class="lesson-title-sb">Refresh high-authority content regularly</span></li>
+        <li><span class="lesson-num">2.10</span><span class="lesson-title-sb">Conduct prompt research</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">Bets</div>
+      <ul class="lesson-list">
+        <li><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></li>
+        <li><span class="lesson-num">2.12</span><span class="lesson-title-sb">Agent behavior / log analysis</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">Expert Interview</div>
+      <ul class="lesson-list">
+        <li><span class="lesson-num">2.13</span><span class="lesson-title-sb">Building the Foundation · Kevin Indig</span></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+    <nav class="breadcrumb"><a href="#">AI Search OS</a> / <a href="#">Discoverability</a> / Set a deliberate AI crawler policy</nav>
+    <div class="lesson-eyebrow">
+      Lesson 2.8
+      <span class="eyebrow-tag">Best Practice</span>
+    </div>
+    <h1 class="lesson-title">Set a deliberate AI crawler policy, bot by bot</h1>
+    <div class="lesson-meta">
+      <span><strong>Updated</strong> May 19, 2026</span>
+      <span><strong>Read time</strong> ~5 minutes</span>
+      <span><strong>Layer</strong> Discoverability</span>
+    </div>
+
+    <p class="tactic-desc">AI crawler policy isn't a default — it's a decision. Some sites block AI bots without realizing it, through inherited CDN rules, overzealous WAF settings, or older robots.txt entries written before AI bots existed. Others allow everything by default, without thinking through the tradeoffs. Setting a deliberate AI crawler policy means auditing what your current policy actually is, then choosing — bot by bot — whether each major AI crawler (Google, ChatGPT, Perplexity, Claude) should be allowed, blocked, or limited.</p>
+
+    <h3 class="section-h">Why it works</h3>
+    <p>Most AI search systems get content through two main paths: <em>training-time crawls</em> (the bulk sweeps that build the model's underlying knowledge) and <em>retrieval at query time</em> (the live fetches an AI assistant makes when answering a user's specific question). Both depend on their crawlers being able to reach your pages. Block the crawler and your content drops out of those paths, even if it's the best answer on the web.</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <rect x="20" y="92" width="140" height="56" rx="10" fill="#191C1F"/>
+        <text x="90" y="118" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Your content</text>
+        <text x="90" y="136" fill="#C9A0FF" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">crawlable HTML</text>
+
+        <path d="M160 110 Q 260 110 320 56" stroke="#6A35FF" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+        <rect x="320" y="28" width="160" height="56" rx="10" fill="#F0EBFF" stroke="#6A35FF" stroke-width="1.5"/>
+        <text x="400" y="52" fill="#191C1F" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Training-time crawls</text>
+        <text x="400" y="70" fill="#6B7280" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">bulk knowledge sweeps</text>
+
+        <path d="M480 56 L 530 56" stroke="#6A35FF" stroke-width="2" marker-end="url(#arrow)"/>
+        <rect x="530" y="28" width="130" height="56" rx="10" fill="#FFFFFF" stroke="#191C1F" stroke-width="1.5"/>
+        <text x="595" y="52" fill="#191C1F" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Model knowledge</text>
+        <text x="595" y="70" fill="#6B7280" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">cited from memory</text>
+
+        <path d="M160 130 Q 260 130 320 184" stroke="#6A35FF" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+        <rect x="320" y="156" width="160" height="56" rx="10" fill="#EAF5EF" stroke="#33AA77" stroke-width="1.5"/>
+        <text x="400" y="180" fill="#191C1F" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Retrieval at query time</text>
+        <text x="400" y="198" fill="#6B7280" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">live per-query fetches</text>
+
+        <path d="M480 184 L 530 184" stroke="#6A35FF" stroke-width="2" marker-end="url(#arrow)"/>
+        <rect x="530" y="156" width="130" height="56" rx="10" fill="#FFFFFF" stroke="#191C1F" stroke-width="1.5"/>
+        <text x="595" y="180" fill="#191C1F" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Answers + citations</text>
+        <text x="595" y="198" fill="#6B7280" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">surfaced in real time</text>
+
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#6A35FF"/>
+          </marker>
+        </defs>
+      </svg>
+      <div class="diagram-caption">The two paths AI systems use to reach your content. Block either crawler and you drop out of that path.</div>
+    </div>
+
+    <p>Deliberation matters because the right answer isn't universal. A medical publisher might block training-time crawlers (concerned about content being reproduced without context) while keeping retrieval-time fetches open (so users can find specific articles). A content marketing site might allow everything (to maximize citation). Both are valid stances. The failure mode is making no decision — defaulting to whatever robots.txt was written before AI crawlers existed.</p>
+
+    <p>The crawler documentation is public: <a href="https://platform.openai.com/docs/bots">OpenAI's GPTBot</a>, <a href="https://support.anthropic.com/en/articles/8896518">Anthropic's ClaudeBot</a>, <a href="https://docs.perplexity.ai/guides/bots">Perplexity's PerplexityBot</a>, and <a href="https://commoncrawl.org/ccbot">Common Crawl's CCBot</a> all respect robots.txt. Independent tracking from <a href="https://originality.ai/blog/ai-bot-blocking-report">Originality.ai's bot block report</a> shows rising publisher blocks against these crawlers; brands that maintain deliberate access policies continue to appear in cross-platform citation studies.</p>
+
+    <h3 class="section-h">How to apply</h3>
+    <ul class="checklist">
+      <li>Audit your current robots.txt for AI-specific user agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot). Note what's allowed, blocked, or unmentioned.</li>
+      <li>Decide per-bot whether each should be allowed, blocked, or limited to specific directories. Document the reasoning.</li>
+      <li>Confirm your CDN and WAF rules align with the decision — a common silent failure that contradicts the robots.txt intent.</li>
+      <li>Schedule a recurring re-check. New bots appear, naming conventions shift.</li>
+    </ul>
+
+    <h3 class="section-h">Watch out for</h3>
+    <div class="watch">
+      <ul>
+        <li>Some AI bots fetch for training, others for live retrieval. You can allow one and not the other. The deliberation is per-bot and per-purpose.</li>
+        <li>Access is one part of the picture. Even with the right policy in place, content still has to be discoverable, well-structured, and worth retrieving before AI systems cite it.</li>
+      </ul>
+    </div>
+
+    <nav class="lesson-foot">
+      <a href="05-bp-passage-optimization.html" class="foot-link prev">
+        <div class="foot-direction">← Previous</div>
+        <div class="foot-title">Passage-level content optimization</div>
+      </a>
+      <a href="#" class="foot-link next">
+        <div class="foot-direction">Next →</div>
+        <div class="foot-title">Refresh high-authority content regularly</div>
+      </a>
+    </nav>
+  </main>
+</div>
+
+</body>
+</html>

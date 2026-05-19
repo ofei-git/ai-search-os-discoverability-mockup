@@ -1,0 +1,604 @@
+:root {
+  --purple: #6A35FF;
+  --purple-hover: #5529CC;
+  --purple-light: #F0EBFF;
+  --lavender-bg: #F8F6FF;
+  --lavender: #C9A0FF;
+  --mint: #D8EDE4;
+  --mint-soft: #EAF5EF;
+  --teal: #33D4A0;
+  --near-black: #191C1F;
+  --gray-mid: #6B7280;
+  --gray-line: #E8E8E8;
+  --gray-soft: #F5F5F5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--near-black);
+  background: #FAFAFA;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Skilljar topbar */
+.topbar {
+  background: white;
+  border-bottom: 1px solid var(--gray-line);
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--near-black);
+}
+.topbar-logo::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #FF642D;
+  border-radius: 50%;
+  display: inline-block;
+}
+.topbar-divider { color: var(--gray-line); }
+.topbar-course {
+  color: var(--gray-mid);
+  font-size: 14px;
+  font-weight: 500;
+}
+.topbar-spacer { flex: 1; }
+.topbar-progress {
+  font-size: 13px;
+  color: var(--gray-mid);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: calc(100vh - 51px);
+}
+
+/* Sidebar with grouped lessons */
+.sidebar {
+  background: white;
+  border-right: 1px solid var(--gray-line);
+  padding: 28px 0 40px;
+  overflow-y: auto;
+}
+.sidebar-course-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: var(--near-black);
+  padding: 0 24px 6px;
+}
+.sidebar-course-sub {
+  font-size: 12px;
+  color: var(--gray-mid);
+  padding: 0 24px 18px;
+  border-bottom: 1px solid var(--gray-line);
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+.sidebar-group {
+  margin-bottom: 8px;
+}
+.sidebar-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gray-mid);
+  padding: 14px 24px 6px;
+}
+.lesson-list { list-style: none; }
+.lesson-list li {
+  padding: 9px 24px;
+  font-size: 13.5px;
+  color: var(--near-black);
+  border-left: 3px solid transparent;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+.lesson-list li:hover {
+  background: var(--gray-soft);
+}
+.lesson-list li.current {
+  background: var(--lavender-bg);
+  border-left-color: var(--purple);
+  font-weight: 600;
+}
+.lesson-list li.done {
+  color: var(--gray-mid);
+}
+.lesson-list li.placeholder {
+  color: #B5B5BD;
+  font-style: italic;
+  cursor: default;
+}
+.lesson-list li.placeholder:hover {
+  background: transparent;
+}
+.lesson-num {
+  font-variant-numeric: tabular-nums;
+  color: var(--gray-mid);
+  font-size: 11.5px;
+  font-weight: 500;
+  min-width: 30px;
+  padding-top: 1px;
+}
+.lesson-list li.current .lesson-num {
+  color: var(--purple);
+  font-weight: 600;
+}
+.lesson-title-sb { flex: 1; }
+
+/* Main content */
+.main {
+  padding: 56px 80px 100px;
+  max-width: 820px;
+}
+.breadcrumb {
+  font-size: 13px;
+  color: var(--gray-mid);
+  margin-bottom: 24px;
+}
+.breadcrumb a { color: var(--gray-mid); text-decoration: none; }
+.lesson-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--purple);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--near-black);
+  background: var(--mint-soft);
+  padding: 4px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+.eyebrow-tag::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+}
+
+h1.lesson-title {
+  font-size: 38px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+}
+.lesson-meta {
+  font-size: 13px;
+  color: var(--gray-mid);
+  margin-bottom: 36px;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-line);
+}
+.lesson-meta strong { color: var(--near-black); font-weight: 600; }
+
+/* Lesson intro page */
+.lesson-intro p {
+  font-size: 18px;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+/* Criteria callout block */
+.criteria-block {
+  background: var(--mint-soft);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin: 32px 0;
+}
+.criteria-block-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--near-black);
+  margin-bottom: 18px;
+}
+.criteria-list {
+  list-style: none;
+  counter-reset: criteria;
+}
+.criteria-list li {
+  counter-increment: criteria;
+  padding: 8px 0 8px 44px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.criteria-list li::before {
+  content: counter(criteria);
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 28px;
+  height: 28px;
+  background: white;
+  color: var(--near-black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.criteria-list li strong { font-weight: 600; }
+.criteria-list li .gloss { color: var(--gray-mid); }
+
+/* What's in this lesson roadmap */
+.roadmap-h {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--near-black);
+  margin: 48px 0 18px;
+}
+.roadmap-list {
+  list-style: none;
+  counter-reset: roadmap;
+}
+.roadmap-list li {
+  counter-increment: roadmap;
+  border-bottom: 1px solid var(--gray-line);
+  padding: 14px 0 14px 48px;
+  position: relative;
+}
+.roadmap-list li:first-child {
+  border-top: 1px solid var(--gray-line);
+}
+.roadmap-list li::before {
+  content: counter(roadmap);
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 28px;
+  height: 28px;
+  background: var(--gray-soft);
+  color: var(--near-black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+.roadmap-list a {
+  text-decoration: none;
+  color: var(--near-black);
+  font-weight: 600;
+  font-size: 15.5px;
+  display: block;
+  line-height: 1.4;
+}
+.roadmap-list a:hover { color: var(--purple); }
+.roadmap-list .roadmap-sub {
+  font-size: 13.5px;
+  color: var(--gray-mid);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.roadmap-list li.tbd::before {
+  background: white;
+  border: 1.5px dashed var(--gray-line);
+  color: #B5B5BD;
+}
+.roadmap-list li.tbd a {
+  color: #B5B5BD;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* BP page content */
+.tactic-desc {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--near-black);
+  margin-bottom: 36px;
+}
+h3.section-h {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 36px 0 14px;
+  color: var(--near-black);
+}
+.main p {
+  margin-bottom: 16px;
+}
+.main p:last-child { margin-bottom: 0; }
+.main a {
+  color: var(--purple);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.main a:hover { color: var(--purple-hover); }
+
+/* Inline diagram */
+.diagram {
+  background: white;
+  border: 1px solid var(--gray-line);
+  border-radius: 12px;
+  padding: 28px 24px 20px;
+  margin: 24px 0 32px;
+}
+.diagram-caption {
+  text-align: center;
+  font-size: 13px;
+  color: var(--gray-mid);
+  margin-top: 8px;
+}
+
+/* Checklist */
+.checklist-lead {
+  font-size: 15px;
+  color: var(--gray-mid);
+  margin-bottom: 14px;
+}
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+.checklist li {
+  padding: 14px 16px 14px 48px;
+  border: 1px solid var(--gray-line);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.5;
+  background: white;
+  transition: border-color 0.15s ease;
+}
+.checklist li:hover { border-color: var(--purple); }
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #B5B5BD;
+  border-radius: 4px;
+  background: white;
+}
+
+/* Watch out for */
+.watch {
+  background: var(--lavender-bg);
+  border-left: 3px solid var(--lavender);
+  padding: 20px 24px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+.watch ul { list-style: none; }
+.watch li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.watch li:not(:last-child) {
+  border-bottom: 1px solid #E8E0F8;
+  margin-bottom: 4px;
+}
+.watch li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--purple);
+  border-radius: 50%;
+}
+.watch li::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 20px;
+  width: 2px;
+  height: 2px;
+  background: var(--purple);
+  border-radius: 50%;
+}
+
+/* Side-by-side comparison for BP2 (no JS vs with JS) */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0 32px;
+  max-width: 100%;
+}
+.compare-card {
+  border: 1px solid var(--gray-line);
+  border-radius: 12px;
+  padding: 20px 20px 18px;
+  background: white;
+  min-width: 0;
+  overflow: hidden;
+}
+.compare-card.fail {
+  border-color: #EFD9D9;
+  background: #FFF8F8;
+}
+.compare-card.pass {
+  border-color: #D9EFE5;
+  background: #F8FFFB;
+}
+.compare-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+.compare-card.fail .compare-label { color: #B53A3A; }
+.compare-card.pass .compare-label { color: #1F7A55; }
+.compare-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.compare-card pre {
+  background: #1A1A1F;
+  color: #C9A0FF;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-x: auto;
+  margin-top: 8px;
+  max-width: 100%;
+  white-space: pre;
+}
+
+/* Audit scope — two-column visual for Technical SEO Audit lesson */
+.audit-scope {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0 32px;
+  max-width: 100%;
+}
+.audit-col {
+  border: 1px solid var(--gray-line);
+  border-radius: 12px;
+  padding: 22px 22px 18px;
+  background: white;
+  min-width: 0;
+}
+.audit-col.inherit {
+  background: var(--mint-soft);
+  border-color: #D5E8DC;
+}
+.audit-col.new {
+  background: var(--lavender-bg);
+  border-color: #E0D6F7;
+}
+.audit-col-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gray-mid);
+  margin-bottom: 14px;
+}
+.audit-col ul {
+  list-style: none;
+  padding: 0;
+}
+.audit-col li {
+  padding: 6px 0 6px 16px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.audit-col li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 6px;
+  height: 6px;
+  background: var(--near-black);
+  border-radius: 50%;
+}
+.audit-col.new li::before { background: var(--purple); }
+.audit-col .lesson-ref {
+  color: var(--gray-mid);
+  font-size: 11.5px;
+  font-weight: 500;
+  font-style: italic;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+.compare-card pre .tag { color: #4DD4C4; }
+.compare-card pre .comment { color: #6B7280; }
+
+/* Footer / page nav */
+.lesson-foot {
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--gray-line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.foot-link {
+  text-decoration: none;
+  color: var(--near-black);
+  padding: 18px 22px;
+  border: 1px solid var(--gray-line);
+  border-radius: 12px;
+  background: white;
+  display: block;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.foot-link:hover {
+  border-color: var(--purple);
+  box-shadow: 0 4px 16px rgba(106,53,255,0.06);
+}
+.foot-link.prev {
+  text-align: left;
+}
+.foot-link.next {
+  text-align: right;
+}
+.foot-link.disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+.foot-direction {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gray-mid);
+  margin-bottom: 4px;
+}
+.foot-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--near-black);
+  line-height: 1.35;
+}

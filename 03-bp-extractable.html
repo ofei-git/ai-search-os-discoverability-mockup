@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Make content extractable from raw HTML | AI Search OS</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-logo">SEMRUSH</div>
+  <span class="topbar-divider">|</span>
+  <div class="topbar-course">AI Search Operating System &nbsp;›&nbsp; Course 2: Discoverability</div>
+  <div class="topbar-spacer"></div>
+  <div class="topbar-progress">Lesson 2.6 of 13 · 46% complete</div>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-course-title">Course 2 — Discoverability</div>
+    <div class="sidebar-course-sub">AI can only recommend what it can find.</div>
+
+    <div class="sidebar-group">
+      <ul class="lesson-list">
+        <li class="done"><span class="lesson-num">2.1</span><span class="lesson-title-sb">Introduction to Discoverability</span></li>
+        <li class="done"><span class="lesson-num">2.2</span><span class="lesson-title-sb">How AI Platforms Work</span></li>
+        <li class="done"><span class="lesson-num">2.3</span><span class="lesson-title-sb">How to act on Discoverability</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">Best Practices</div>
+      <ul class="lesson-list">
+        <li class="done"><span class="lesson-num">2.4</span><span class="lesson-title-sb">Technical SEO audit</span></li>
+        <li class="done"><span class="lesson-num">2.5</span><span class="lesson-title-sb">Content audit for AI extraction</span></li>
+        <li class="current"><span class="lesson-num">2.6</span><span class="lesson-title-sb">Make content extractable from HTML</span></li>
+        <li><span class="lesson-num">2.7</span><span class="lesson-title-sb">Passage-level content optimization</span></li>
+        <li><span class="lesson-num">2.8</span><span class="lesson-title-sb">Set a deliberate AI crawler policy</span></li>
+        <li><span class="lesson-num">2.9</span><span class="lesson-title-sb">Refresh high-authority content regularly</span></li>
+        <li><span class="lesson-num">2.10</span><span class="lesson-title-sb">Conduct prompt research</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">Bets</div>
+      <ul class="lesson-list">
+        <li><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></li>
+        <li><span class="lesson-num">2.12</span><span class="lesson-title-sb">Agent behavior / log analysis</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">Expert Interview</div>
+      <ul class="lesson-list">
+        <li><span class="lesson-num">2.13</span><span class="lesson-title-sb">Building the Foundation · Kevin Indig</span></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+    <nav class="breadcrumb"><a href="#">AI Search OS</a> / <a href="#">Discoverability</a> / Make content extractable from HTML</nav>
+    <div class="lesson-eyebrow">
+      Lesson 2.6
+      <span class="eyebrow-tag">Best Practice</span>
+    </div>
+    <h1 class="lesson-title">Make your priority content extractable from raw HTML</h1>
+    <div class="lesson-meta">
+      <span><strong>Updated</strong> May 19, 2026</span>
+      <span><strong>Read time</strong> ~5 minutes</span>
+      <span><strong>Layer</strong> Discoverability</span>
+    </div>
+
+    <p class="tactic-desc">Many modern sites — especially those built with React, Vue, Next.js, or similar JavaScript frameworks — render their content in the browser rather than serving it as static HTML. Most AI crawlers don't execute JavaScript, so they see an empty shell instead of your content. Making your priority content extractable from raw HTML means confirming the words, products, and answers AI systems need are present in the page source before any JavaScript runs.</p>
+
+    <h3 class="section-h">Why it works</h3>
+    <p>The two crawler paths from earlier in the course — training-time and retrieval-time — both depend on what's in the raw HTML response, not what gets assembled in a user's browser. When a page's content only renders after JavaScript runs, AI crawlers tend to miss it. The citation never happens, because the content was never visible to begin with.</p>
+
+    <p>This affects more sites than most teams expect: marketing pages built on Next.js without proper server-side rendering, product pages that lazy-load via fetch after the initial paint, content gated behind interactive components. From a human visitor's perspective the site looks fine. From a crawler's perspective there's nothing to read.</p>
+
+    <div class="compare">
+      <div class="compare-card fail">
+        <div class="compare-label">What an AI crawler sees · client-rendered</div>
+        <div class="compare-title">Empty shell — no content to cite</div>
+<pre><span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;div</span> id="app"<span class="tag">&gt;&lt;/div&gt;</span>
+  <span class="tag">&lt;script</span> src="app.js"<span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="comment">// content loads after the crawler leaves</span></pre>
+      </div>
+      <div class="compare-card pass">
+        <div class="compare-label">What an AI crawler sees · server-rendered</div>
+        <div class="compare-title">Real content — readable, citable</div>
+<pre><span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>How AI search works<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;p&gt;</span>AI systems retrieve...<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;article&gt;</span>...full body...<span class="tag">&lt;/article&gt;</span>
+<span class="tag">&lt;/body&gt;</span></pre>
+      </div>
+    </div>
+
+    <p>Vercel's research on AI crawler behavior (<a href="https://vercel.com/blog/the-rise-of-the-ai-crawler">The rise of the AI crawler</a>) tracked over 500 million crawl requests from GPTBot, ClaudeBot, and similar agents — none executed JavaScript on the pages they fetched. Independent testing from <a href="https://www.onely.com/blog/">Onely</a> and Search Engine Land has confirmed the same pattern across major AI bots. Brands serving content server-rendered or via static HTML appear consistently in cross-platform citation studies; JS-dependent SPAs (single-page applications) appear less often.</p>
+
+    <h3 class="section-h">How to apply</h3>
+    <ul class="checklist">
+      <li>Open your priority pages with JavaScript disabled in your browser. What's still visible is roughly what most AI crawlers see.</li>
+      <li>For client-rendered routes, add server-side rendering (SSR), static site generation (SSG), or pre-rendering for AI user agents.</li>
+      <li>Confirm the rendered HTML includes the actual content, not placeholder shells, skeleton loaders, or loading states.</li>
+      <li>Re-test after every major framework upgrade or template change. SSR can silently regress.</li>
+    </ul>
+
+    <h3 class="section-h">Watch out for</h3>
+    <div class="watch">
+      <ul>
+        <li>Some AI crawlers are starting to render JavaScript (Google's AI Overviews via Googlebot, for example), and full rendering may become standard within 12-18 months. For now, treat server-side rendering as the baseline — the crawlers that don't render JS won't be a niche group for at least the next year.</li>
+        <li>Prioritize the pages that matter most for citation: brand pages, product pages, definitive how-to guides, original research. Don't try to refactor everything at once.</li>
+      </ul>
+    </div>
+
+    <nav class="lesson-foot">
+      <a href="#" class="foot-link prev">
+        <div class="foot-direction">← Previous</div>
+        <div class="foot-title">Content audit for AI extraction</div>
+      </a>
+      <a href="05-bp-passage-optimization.html" class="foot-link next">
+        <div class="foot-direction">Next →</div>
+        <div class="foot-title">Passage-level content optimization</div>
+      </a>
+    </nav>
+  </main>
+</div>
+
+</body>
+</html>
