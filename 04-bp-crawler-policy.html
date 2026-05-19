@@ -45,7 +45,7 @@
     <div class="sidebar-group">
       <div class="sidebar-group-label">Bets</div>
       <ul class="lesson-list">
-        <li><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></li>
+        <li class="lesson-clickable"><a href="06-bet-content-formats.html"><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></a></li>
         <li><span class="lesson-num">2.12</span><span class="lesson-title-sb">Agent behavior / log analysis</span></li>
       </ul>
     </div>
@@ -66,9 +66,10 @@
     </div>
     <h1 class="lesson-title">Set a deliberate AI crawler policy, bot by bot</h1>
     <div class="lesson-meta">
-      <span><strong>Updated</strong> May 19, 2026</span>
+      <span><strong>Written by</strong> Michael Ofei</span>
+      <span class="reviewer"><strong>Reviewed by</strong> Kevin Indig</span>
+      <span><strong>Updated</strong> May 20, 2026</span>
       <span><strong>Read time</strong> ~5 minutes</span>
-      <span><strong>Layer</strong> Discoverability</span>
     </div>
 
     <p class="tactic-desc">AI crawler policy isn't a default — it's a decision. Some sites block AI bots without realizing it, through inherited CDN rules, overzealous WAF settings, or older robots.txt entries written before AI bots existed. Others allow everything by default, without thinking through the tradeoffs. Setting a deliberate AI crawler policy means auditing what your current policy actually is, then choosing — bot by bot — whether each major AI crawler (Google, ChatGPT, Perplexity, Claude) should be allowed, blocked, or limited.</p>
@@ -128,6 +129,15 @@
       <ul>
         <li>Some AI bots fetch for training, others for live retrieval. You can allow one and not the other. The deliberation is per-bot and per-purpose.</li>
         <li>Access is one part of the picture. Even with the right policy in place, content still has to be discoverable, well-structured, and worth retrieving before AI systems cite it.</li>
+      </ul>
+    </div>
+
+    <div class="go-deeper">
+      <div class="go-deeper-label">Go deeper</div>
+      <ul>
+        <li><a href="https://platform.openai.com/docs/bots">OpenAI — GPTBot &amp; crawler documentation</a><span class="source-note">Official user-agent names and robots.txt behavior.</span></li>
+        <li><a href="https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/">Cloudflare — Perplexity's stealth crawling</a><span class="source-note">Why crawler policy enforcement isn't always straightforward.</span></li>
+        <li><a href="https://originality.ai/ai-bot-blocking">Originality.ai — AI bot blocking report</a><span class="source-note">Rolling data on how many publishers block AI crawlers.</span></li>
       </ul>
     </div>
 

@@ -45,7 +45,7 @@
     <div class="sidebar-group">
       <div class="sidebar-group-label">Bets</div>
       <ul class="lesson-list">
-        <li><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></li>
+        <li class="lesson-clickable"><a href="06-bet-content-formats.html"><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></a></li>
         <li><span class="lesson-num">2.12</span><span class="lesson-title-sb">Agent behavior / log analysis</span></li>
       </ul>
     </div>
@@ -66,9 +66,10 @@
     </div>
     <h1 class="lesson-title">Passage-level content optimization</h1>
     <div class="lesson-meta">
-      <span><strong>Updated</strong> May 19, 2026</span>
+      <span><strong>Written by</strong> Michael Ofei</span>
+      <span class="reviewer"><strong>Reviewed by</strong> Kevin Indig</span>
+      <span><strong>Updated</strong> May 20, 2026</span>
       <span><strong>Read time</strong> ~6 minutes</span>
-      <span><strong>Layer</strong> Discoverability</span>
     </div>
 
     <p class="tactic-desc">Most AI assistants don't retrieve your full page when they answer a user's question — they retrieve passages. A few hundred tokens lifted from somewhere in your content, ranked against the query, fed to the model. Passage-level optimization means structuring your content so semantically coherent chunks survive that retrieval process. Self-contained passages, entity-dense paragraphs, clear topic sentences — they're what makes individual sections of your content quotable on their own.</p>
@@ -107,6 +108,15 @@
       <ul>
         <li>This isn't about writing for machines. Readers still come first — if your content reads like a list of disconnected paragraphs, you've over-corrected. The goal is content that works as continuous prose <em>and</em> survives chunking. Most well-written non-fiction already does this.</li>
         <li>Don't try to refactor every page. Spend the editorial effort on the pages that matter most for citation — most-trafficked, highest-authority, key brand pages. Refresh-and-restructure is real work; treat it that way.</li>
+      </ul>
+    </div>
+
+    <div class="go-deeper">
+      <div class="go-deeper-label">Go deeper</div>
+      <ul>
+        <li><a href="https://blog.cloudflare.com/markdown-for-agents/">Cloudflare — Markdown for agents</a><span class="source-note">~80% token reduction with no loss of usable information.</span></li>
+        <li><a href="https://arxiv.org/abs/2307.03172">Liu et al. — Lost in the Middle (Stanford / UC Berkeley)</a><span class="source-note">LLMs weight the start and end of retrieved context over the middle.</span></li>
+        <li><a href="https://arxiv.org/abs/2502.01951">Positional bias in LLMs (MIT)</a><span class="source-note">Further evidence on where models place attention in retrieved passages.</span></li>
       </ul>
     </div>
 

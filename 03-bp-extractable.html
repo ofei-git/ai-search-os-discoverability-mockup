@@ -45,7 +45,7 @@
     <div class="sidebar-group">
       <div class="sidebar-group-label">Bets</div>
       <ul class="lesson-list">
-        <li><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></li>
+        <li class="lesson-clickable"><a href="06-bet-content-formats.html"><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></a></li>
         <li><span class="lesson-num">2.12</span><span class="lesson-title-sb">Agent behavior / log analysis</span></li>
       </ul>
     </div>
@@ -66,9 +66,10 @@
     </div>
     <h1 class="lesson-title">Make your priority content extractable from raw HTML</h1>
     <div class="lesson-meta">
-      <span><strong>Updated</strong> May 19, 2026</span>
+      <span><strong>Written by</strong> Michael Ofei</span>
+      <span class="reviewer"><strong>Reviewed by</strong> Kevin Indig</span>
+      <span><strong>Updated</strong> May 20, 2026</span>
       <span><strong>Read time</strong> ~5 minutes</span>
-      <span><strong>Layer</strong> Discoverability</span>
     </div>
 
     <p class="tactic-desc">Many modern sites — especially those built with React, Vue, Next.js, or similar JavaScript frameworks — render their content in the browser rather than serving it as static HTML. Most AI crawlers don't execute JavaScript, so they see an empty shell instead of your content. Making your priority content extractable from raw HTML means confirming the words, products, and answers AI systems need are present in the page source before any JavaScript runs.</p>
@@ -114,6 +115,15 @@
       <ul>
         <li>Some AI crawlers are starting to render JavaScript (Google's AI Overviews via Googlebot, for example), and full rendering may become standard within 12-18 months. For now, treat server-side rendering as the baseline — the crawlers that don't render JS won't be a niche group for at least the next year.</li>
         <li>Prioritize the pages that matter most for citation: brand pages, product pages, definitive how-to guides, original research. Don't try to refactor everything at once.</li>
+      </ul>
+    </div>
+
+    <div class="go-deeper">
+      <div class="go-deeper-label">Go deeper</div>
+      <ul>
+        <li><a href="https://vercel.com/blog/the-rise-of-the-ai-crawler">Vercel — The rise of the AI crawler</a><span class="source-note">500M+ crawl requests analyzed; AI crawlers don't execute JavaScript.</span></li>
+        <li><a href="https://www.onely.com/blog/">Onely — JavaScript and AI crawler testing</a><span class="source-note">Independent crawl tests across major AI bots.</span></li>
+        <li><a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics">Google Search Central — JavaScript SEO basics</a><span class="source-note">How rendering affects what crawlers can read.</span></li>
       </ul>
     </div>
 

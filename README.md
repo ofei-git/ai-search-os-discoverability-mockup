@@ -6,7 +6,7 @@ Proof-of-concept Skilljar lesson pages for **Course 2: Discoverability** of the 
 
 ## What's mocked up
 
-Five lessons are built out in detail to demonstrate the format. The sidebar in each page reflects the full Course 2 structure (13 lessons total).
+Six lessons are built out in detail to demonstrate the format — five Best Practices plus one Bet. The sidebar in each page reflects the full Course 2 structure (13 lessons total) and is clickable for the mocked lessons.
 
 | Lesson | Title | File |
 |---|---|---|
@@ -15,6 +15,7 @@ Five lessons are built out in detail to demonstrate the format. The sidebar in e
 | 2.6 | Make content extractable from HTML *(Best Practice)* | [03-bp-extractable.html](03-bp-extractable.html) |
 | 2.7 | Passage-level content optimization *(Best Practice)* | [05-bp-passage-optimization.html](05-bp-passage-optimization.html) |
 | 2.8 | Set a deliberate AI crawler policy *(Best Practice)* | [04-bp-crawler-policy.html](04-bp-crawler-policy.html) |
+| 2.11 | Publish in AI-extractable content formats *(Bet)* | [06-bet-content-formats.html](06-bet-content-formats.html) |
 
 ## Course 2 structure (full)
 

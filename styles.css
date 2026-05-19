@@ -203,7 +203,8 @@ h1.lesson-title {
   color: var(--gray-mid);
   margin-bottom: 36px;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--gray-line);
 }
@@ -603,4 +604,116 @@ h3.section-h {
   font-weight: 600;
   color: var(--near-black);
   line-height: 1.35;
+}
+
+/* Reviewer credit in meta strip */
+.lesson-meta .reviewer strong { color: var(--near-black); }
+
+/* Criteria 3-card grid (visual treatment for the intro lesson) */
+.criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0 12px;
+}
+.crit-card {
+  background: white;
+  border: 1px solid var(--gray-line);
+  border-radius: 14px;
+  padding: 22px 22px 20px;
+  min-width: 0;
+}
+.crit-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  margin-bottom: 14px;
+}
+.crit-card.c1 .crit-num { background: var(--purple); }
+.crit-card.c2 .crit-num { background: var(--near-black); }
+.crit-card.c3 .crit-num { background: var(--teal); color: var(--near-black); }
+.crit-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+.crit-desc {
+  font-size: 13.5px;
+  color: var(--gray-mid);
+  line-height: 1.5;
+}
+.methodology-link {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+.methodology-link a {
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 600;
+}
+.methodology-link a:hover { text-decoration: underline; }
+
+/* Bet eyebrow tag variant */
+.eyebrow-tag.bet {
+  background: var(--lavender-bg);
+  color: var(--purple);
+}
+.eyebrow-tag.bet::before {
+  background: var(--lavender);
+}
+
+/* Go deeper / references section */
+.go-deeper {
+  margin-top: 36px;
+  padding: 24px 28px;
+  background: var(--mint-soft);
+  border-radius: 12px;
+}
+.go-deeper-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gray-mid);
+  margin-bottom: 14px;
+}
+.go-deeper ul {
+  list-style: none;
+  padding: 0;
+}
+.go-deeper li {
+  padding: 9px 0 9px 22px;
+  position: relative;
+  font-size: 14.5px;
+  line-height: 1.5;
+  border-bottom: 1px solid #D5E8DC;
+}
+.go-deeper li:last-child { border-bottom: 0; padding-bottom: 0; }
+.go-deeper li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  color: var(--purple);
+  font-weight: 700;
+}
+.go-deeper a {
+  color: var(--near-black);
+  text-decoration: none;
+  font-weight: 600;
+}
+.go-deeper a:hover { color: var(--purple); text-decoration: underline; }
+.go-deeper .source-note {
+  display: block;
+  color: var(--gray-mid);
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 2px;
 }
