@@ -110,27 +110,29 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  cursor: pointer;
   line-height: 1.4;
 }
-.lesson-list li:hover {
+.lesson-list li.lesson-clickable {
+  cursor: pointer;
+}
+.lesson-list li.lesson-clickable:hover {
   background: var(--gray-soft);
+}
+.lesson-list li > a {
+  display: contents;
+  color: inherit;
+  text-decoration: none;
 }
 .lesson-list li.current {
   background: var(--lavender-bg);
   border-left-color: var(--purple);
   font-weight: 600;
 }
+.lesson-list li.current.lesson-clickable:hover {
+  background: var(--lavender-bg);
+}
 .lesson-list li.done {
   color: var(--gray-mid);
-}
-.lesson-list li.placeholder {
-  color: #B5B5BD;
-  font-style: italic;
-  cursor: default;
-}
-.lesson-list li.placeholder:hover {
-  background: transparent;
 }
 .lesson-num {
   font-variant-numeric: tabular-nums;
