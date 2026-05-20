@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI-extractable content formats | AI Search OS</title>
+<title>Agent behavior / log analysis | AI Search OS</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
   <span class="topbar-divider">|</span>
   <div class="topbar-course">AI Search Operating System &nbsp;›&nbsp; Course 2: Discoverability</div>
   <div class="topbar-spacer"></div>
-  <div class="topbar-progress">Lesson 2.11 of 13 · 85% complete</div>
+  <div class="topbar-progress">Lesson 2.12 of 13 · 92% complete</div>
 </header>
 
 <div class="layout">
@@ -45,8 +45,8 @@
     <div class="sidebar-group">
       <div class="sidebar-group-label">Bets</div>
       <ul class="lesson-list">
-        <li class="current lesson-clickable"><a href="06-bet-content-formats.html"><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></a></li>
-        <li class="lesson-clickable"><a href="10-bet-agent-logs.html"><span class="lesson-num">2.12</span><span class="lesson-title-sb">Agent behavior / log analysis</span></a></li>
+        <li class="done lesson-clickable"><a href="06-bet-content-formats.html"><span class="lesson-num">2.11</span><span class="lesson-title-sb">AI-extractable content formats</span></a></li>
+        <li class="current lesson-clickable"><a href="10-bet-agent-logs.html"><span class="lesson-num">2.12</span><span class="lesson-title-sb">Agent behavior / log analysis</span></a></li>
       </ul>
     </div>
 
@@ -59,62 +59,62 @@
   </aside>
 
   <main class="main">
-    <nav class="breadcrumb"><a href="#">AI Search OS</a> / <a href="#">Discoverability</a> / AI-extractable content formats</nav>
+    <nav class="breadcrumb"><a href="#">AI Search OS</a> / <a href="#">Discoverability</a> / Agent behavior / log analysis</nav>
     <div class="lesson-eyebrow">
-      Lesson 2.11
+      Lesson 2.12
       <span class="eyebrow-tag bet">Bet</span>
     </div>
-    <h1 class="lesson-title">Publish in AI-extractable content formats</h1>
+    <h1 class="lesson-title">Analyze AI agent behavior in your logs</h1>
     <div class="lesson-meta">
       <span><strong>Written by</strong> Michael Ofei</span>
       <span class="reviewer"><strong>Reviewed by</strong> Kevin Indig</span>
       <span><strong>Updated</strong> May 20, 2026</span>
-      <span><strong>Read time</strong> ~5 minutes</span>
+      <span><strong>Read time</strong> ~4 minutes</span>
     </div>
 
-    <p class="tactic-desc">Some content formats get surfaced by AI systems more readily than others — comparison tables, "X vs Y" pages, "best for [audience]" guides, FAQ structures, decision-tree content. The idea behind this Bet: deliberately produce more of the formats AI tends to lift and cite, as a portfolio decision about which content types you invest in. It's distinct from passage-level optimization (how you structure any given page) — this is about which kinds of pages you choose to build in the first place.</p>
+    <p class="tactic-desc">Server log analysis is old news for traditional crawlers — SEOs have mined logs for years to see what Googlebot fetches. The bet here is that the same discipline, applied to AI agents, reveals something new: which of your pages AI systems actually retrieve in real time, and how often. Because AI agents fetch and validate content at query time, log analysis can show you what's being <em>used</em>, not just what's indexed.</p>
 
     <h3 class="section-h">Why it might work</h3>
-    <p>AI assistants frequently answer comparison and recommendation queries — "best X for Y," "X vs Y," "alternatives to X." Content explicitly structured to answer those question shapes is easier for a model to extract and present as a direct answer.</p>
+    <p>Traditional crawl logs tell you what got indexed. AI agent logs could tell you what's getting retrieved and cited right now — a more direct signal of what's actually working in AI search.</p>
 
-    <p>A comparison table, for instance, maps cleanly onto the structured response an AI assistant wants to generate. The bet is that matching your content formats to the question shapes AI users actually ask increases your odds of being the source it pulls from.</p>
+    <p>If you can see that GPTBot fetches your comparison pages ten times more often than your blog posts, that's a real input to where you invest. The mechanism is sound: AI agents do hit your server, and those requests are logged. The open question is what you do with the data once you have it.</p>
 
     <h3 class="section-h">What we've seen</h3>
-    <p>BrightEdge's research on how query intent shapes brand competition across AI search engines points to format-specific patterns in which content gets surfaced.<sup class="fn"><a href="#ref1" id="cite1">1</a></sup> The signal is real but early — we don't yet have strong causal evidence that producing more of these formats lifts citation share predictably.</p>
+    <p>This one is early. Pulling AI user-agents out of your logs is technically straightforward — the requests are right there — but the playbook for acting on the data isn't established yet.</p>
 
-    <p>That's why this is a Bet rather than a Best Practice: the mechanism is sound and the cost is mostly editorial, but the research isn't conclusive yet. Treat it as a directional experiment, not a proven play.</p>
+    <p>When Kevin Indig reviewed this for the course, he named the gap directly: it's a helpful analysis, but it's not yet clear what you'd do differently on a page that agents <em>don't</em> retrieve, or how that action would differ from the tactics already covered. That's the honest state of this Bet — the data is available, the resulting actions are still being figured out. We're including it because the signal is promising and the cost to start watching is low, not because the playbook is proven.</p>
 
     <h3 class="section-h">How to try it</h3>
     <ul class="checklist">
-      <li>Identify the comparison, alternative, and "best for" queries that matter in your category. (Prompt research, the previous Best Practice, feeds directly into this.)</li>
-      <li>Pick 3-5 high-intent question shapes and build dedicated pages for them — comparison tables, decision guides, FAQ structures.</li>
-      <li>Structure each page so the answer is extractable: clear headers, tabular data where it fits, self-contained sections.</li>
-      <li>Track whether these formats earn citations over 60-90 days before scaling the investment.</li>
+      <li>Filter your server logs for AI user-agents (GPTBot, ClaudeBot, PerplexityBot, and others).</li>
+      <li>Track retrieval frequency by page and by bot over time — look for which content gets fetched, and which never does.</li>
+      <li>Cross-reference with your citation tracking: do the pages agents retrieve correlate with the pages that get cited?</li>
+      <li>Treat findings as a hypothesis generator, not a directive — surface patterns worth testing, then test them.</li>
     </ul>
 
     <h3 class="section-h">Watch out for</h3>
     <div class="watch">
       <ul>
-        <li>This is a portfolio bet, not a guarantee. Some formats will land, others won't — treat the first batch as an experiment and let citation data guide where you double down.</li>
-        <li>Don't manufacture comparison or "best for" pages where you have no genuine authority. Thin, formulaic format-chasing reads as low-quality to both readers and AI systems.</li>
+        <li>The open question, plainly: it's not yet clear what action you take on a page agents don't retrieve, or whether it differs from your other tactics. If you can't answer that for your own site, the analysis is interesting but not yet actionable.</li>
+        <li>Don't over-invest before the playbook exists. This is a watch-and-learn Bet — collect the data and look for patterns, but don't restructure your strategy around it yet.</li>
       </ul>
     </div>
 
     <div class="references">
       <div class="references-label">References</div>
       <ol>
-        <li id="ref1">BrightEdge — <a href="https://www.brightedge.com/resources">How query intent shapes brand competition across AI search engines</a>. <a href="#cite1" class="backref">&#8617;</a></li>
+        <li>Evidence for this Bet is still emerging — AI-agent log analysis is a new practice and the source base is being assembled. Sources to be confirmed with the team before publishing.</li>
       </ol>
     </div>
 
     <nav class="lesson-foot">
-      <a href="09-bp-prompt-research.html" class="foot-link prev">
+      <a href="06-bet-content-formats.html" class="foot-link prev">
         <div class="foot-direction">← Previous</div>
-        <div class="foot-title">Conduct prompt research</div>
+        <div class="foot-title">AI-extractable content formats</div>
       </a>
-      <a href="10-bet-agent-logs.html" class="foot-link next">
+      <a href="#" class="foot-link next">
         <div class="foot-direction">Next →</div>
-        <div class="foot-title">Agent behavior / log analysis</div>
+        <div class="foot-title">Building the Foundation · Kevin Indig</div>
       </a>
     </nav>
   </main>
