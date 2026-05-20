@@ -717,3 +717,50 @@ h3.section-h {
   font-size: 13px;
   margin-top: 2px;
 }
+
+/* Inline footnote markers + references list */
+.fn {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  font-weight: 700;
+  margin-left: 1px;
+}
+.fn a { text-decoration: none; color: var(--purple); }
+.fn a:hover { text-decoration: underline; }
+
+.references {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-line);
+}
+.references-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gray-mid);
+  margin-bottom: 14px;
+}
+.references ol {
+  margin: 0;
+  padding-left: 22px;
+}
+.references li {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--near-black);
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+.references li a {
+  color: var(--purple);
+  text-decoration: none;
+}
+.references li a:hover { text-decoration: underline; }
+.references .backref {
+  margin-left: 6px;
+  color: var(--gray-mid);
+  font-size: 12px;
+  text-decoration: none;
+}
