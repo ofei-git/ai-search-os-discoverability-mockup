@@ -669,6 +669,85 @@ h3.section-h {
   background: var(--lavender);
 }
 
+/* Data table (audit output, etc.) — Semrush presentation table style */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 22px 0 32px;
+  font-size: 13.5px;
+}
+.data-table th {
+  background: #1A1A1F;
+  color: #FFFFFF;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.data-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--gray-line);
+  color: var(--near-black);
+  line-height: 1.4;
+  vertical-align: top;
+}
+.data-table tr:last-child td { border-bottom: 0; }
+.data-table .mono { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 12.5px; }
+.data-table .pri-high { color: #B53A3A; font-weight: 600; }
+.data-table .pri-med { color: #8B6F00; font-weight: 600; }
+.data-table .pri-low { color: var(--gray-mid); font-weight: 600; }
+.data-table .fix-ref { color: var(--purple); font-weight: 600; white-space: nowrap; }
+
+/* Format menu (AI-extractable formats) */
+.format-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 22px 0 32px;
+}
+.format-card {
+  border: 1px solid var(--gray-line);
+  border-radius: 10px;
+  padding: 16px 18px;
+  background: white;
+  min-width: 0;
+}
+.format-card .fmt-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.format-card .fmt-answers {
+  font-size: 13px;
+  color: var(--gray-mid);
+  line-height: 1.45;
+}
+
+/* Log excerpt block */
+.logbox {
+  background: #1A1A1F;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 22px 0 10px;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-x: auto;
+  color: #C9A0FF;
+  white-space: pre;
+}
+.logbox .log-bot { color: #4DD4C4; }
+.logbox .log-page { color: #FFFFFF; }
+.logbox .log-meta { color: #7A7A85; }
+.logbox-caption {
+  text-align: center;
+  font-size: 13px;
+  color: var(--gray-mid);
+  margin: 0 0 32px;
+}
+
 /* Inline footnote markers + references list */
 .fn {
   font-size: 0.7em;

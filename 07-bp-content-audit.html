@@ -77,9 +77,23 @@
     <h3 class="section-h">Why it works</h3>
     <p>Passage-level optimization, content formats, content refreshes — they're all real editorial work, and you can't do them everywhere at once. Without an audit, the content work becomes either paralyzing (you're staring at 1,200 pages) or arbitrary (you fix whatever's top of mind).</p>
 
-    <p>This lesson is the content-side diagnostic. The fixes it points to each have their own lesson — passage-level structure (Lesson 2.7), extractable formats (Lesson 2.11), freshness (Lesson 2.9). The audit's job is to rank your pages so you spend editorial effort where it moves citation share, not where it's easiest to start.</p>
+    <p>This lesson is the content-side diagnostic. It combines visibility scanning, top-performer triage, competitor gap analysis, and extraction testing into a single ranked output<sup class="fn"><a href="#ref1" id="cite1">1</a></sup> — so you spend editorial effort where it moves citation share, not where it's easiest to start.</p>
 
-    <p>One technique does most of the work: extraction testing. Pulling the plain Markdown an AI agent would actually see from a page surfaces gaps that aren't visible in a normal browser<sup class="fn"><a href="#ref1" id="cite1">1</a></sup> — buried answers, content trapped in interactive components, key facts that never make it into the extracted text. Mike King's AI Search Manual lays out the broader generative-engine audit approach this builds on.<sup class="fn"><a href="#ref2" id="cite2">2</a></sup></p>
+    <p>Extraction testing does most of the work. Pull the plain Markdown an AI agent would actually see, and gaps appear that a normal browser hides<sup class="fn"><a href="#ref2" id="cite2">2</a></sup> — buried answers, content trapped in interactive components, key facts that never reach the extracted text.</p>
+
+    <p>The output is a ranked list that hands each prioritized page to the fix it needs:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Page</th><th>What the audit flags</th><th>Priority</th><th>Send to</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">/best-leggings-for-yoga</td><td>No clear answer up top; weak passage structure</td><td class="pri-high">High</td><td class="fix-ref">Lesson 2.7</td></tr>
+        <tr><td class="mono">/size-guide</td><td>Specs only render via JavaScript</td><td class="pri-high">High</td><td class="fix-ref">Lesson 2.6</td></tr>
+        <tr><td class="mono">/leggings-vs-competitor</td><td>No comparison-table structure</td><td class="pri-med">Medium</td><td class="fix-ref">Lesson 2.11</td></tr>
+        <tr><td class="mono">/2024-fabric-guide</td><td>Outdated data and publish date</td><td class="pri-med">Medium</td><td class="fix-ref">Lesson 2.9</td></tr>
+      </tbody>
+    </table>
 
     <h3 class="section-h">How to apply</h3>
     <ul class="checklist">
@@ -101,8 +115,8 @@
     <div class="references">
       <div class="references-label">References</div>
       <ol>
-        <li id="ref1">Cloudflare — <a href="https://blog.cloudflare.com/markdown-for-agents/">Markdown for agents</a> (the extracted text an AI agent sees, vs. the rendered page). <a href="#cite1" class="backref">&#8617;</a></li>
-        <li id="ref2">Mike King / iPullRank — <a href="https://ipullrank.com/ai-search-manual">The AI Search Manual</a> (generative-engine audit methodology). <a href="#cite2" class="backref">&#8617;</a></li>
+        <li id="ref1">iPullRank — <a href="https://ipullrank.com/ai-search-manual">The AI Search Manual</a> (generative-engine audit methodology). <a href="#cite1" class="backref">&#8617;</a></li>
+        <li id="ref2">Cloudflare — <a href="https://blog.cloudflare.com/markdown-for-agents/">Markdown for agents</a> (the extracted text an AI agent sees, vs. the rendered page). <a href="#cite2" class="backref">&#8617;</a></li>
       </ol>
     </div>
 
