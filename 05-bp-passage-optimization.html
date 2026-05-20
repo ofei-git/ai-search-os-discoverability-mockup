@@ -75,7 +75,9 @@
     <p class="tactic-desc">Most AI assistants don't retrieve your full page when they answer a user's question — they retrieve passages. A few hundred tokens lifted from somewhere in your content, ranked against the query, fed to the model. Passage-level optimization means structuring your content so semantically coherent chunks survive that retrieval process. Self-contained passages, entity-dense paragraphs, clear topic sentences — they're what makes individual sections of your content quotable on their own.</p>
 
     <h3 class="section-h">Why it works</h3>
-    <p>Traditional SEO optimizes for whole-page ranking. Meta description, internal links, page authority — all about how the page performs as a unit. AI retrieval is different. The model doesn't care about your page as a whole. It cares about which specific 200-500 tokens best answer the query. That's the RAG (retrieval-augmented generation) pipeline at work: content gets chunked, embedded, ranked, and the top-ranking chunks get fed into the model's context window.</p>
+    <p>Traditional SEO optimizes for whole-page ranking. Meta description, internal links, page authority — all about how the page performs as a unit.</p>
+
+    <p>AI retrieval is different. The model doesn't care about your page as a whole. It cares about which specific 200-500 tokens best answer the query. That's the RAG (retrieval-augmented generation) pipeline at work: content gets chunked, embedded, ranked, and the top-ranking chunks get fed into the model's context window.</p>
 
     <p>A strong page with weak internal structure can get partially cited or, worse, cited without the framing that gives it meaning. If a paragraph references "the company" without naming it, and that paragraph gets retrieved as a standalone chunk, the user sees a citation that's about… someone. The chunk failed.</p>
 
@@ -92,7 +94,9 @@
       </div>
     </div>
 
-    <p>Cloudflare's research on serving content as Markdown for AI agents (<a href="https://blog.cloudflare.com/markdown-for-agents/">Markdown for agents</a>) found roughly an 80% token reduction with no loss of usable information — a direct argument for clean, well-structured passages. Liu et al.'s "Lost in the Middle" paper (<a href="https://arxiv.org/abs/2307.03172">arxiv.org/abs/2307.03172</a>) showed LLMs weight information at the start and end of retrieved contexts more heavily than the middle. Kevin Indig's analysis of 1.2 million ChatGPT responses found that 44.2% of citations came from the first third of source pages — the part most likely to be retrieved as a self-contained chunk.</p>
+    <p>Cloudflare's research on serving content as Markdown for AI agents found roughly an 80% token reduction with no loss of usable information<sup class="fn"><a href="#ref1" id="cite1">1</a></sup> — a direct argument for clean, well-structured passages.</p>
+
+    <p>Liu et al.'s "Lost in the Middle" paper showed LLMs weight information at the start and end of retrieved contexts more heavily than the middle<sup class="fn"><a href="#ref2" id="cite2">2</a></sup>, a pattern later corroborated by MIT researchers.<sup class="fn"><a href="#ref3" id="cite3">3</a></sup> Kevin Indig's analysis of 1.2 million ChatGPT responses found that 44.2% of citations came from the first third of source pages<sup class="fn"><a href="#ref4" id="cite4">4</a></sup> — the part most likely to be retrieved as a self-contained chunk.</p>
 
     <h3 class="section-h">How to apply</h3>
     <ul class="checklist">
@@ -111,13 +115,14 @@
       </ul>
     </div>
 
-    <div class="go-deeper">
-      <div class="go-deeper-label">Go deeper</div>
-      <ul>
-        <li><a href="https://blog.cloudflare.com/markdown-for-agents/">Cloudflare — Markdown for agents</a><span class="source-note">~80% token reduction with no loss of usable information.</span></li>
-        <li><a href="https://arxiv.org/abs/2307.03172">Liu et al. — Lost in the Middle (Stanford / UC Berkeley)</a><span class="source-note">LLMs weight the start and end of retrieved context over the middle.</span></li>
-        <li><a href="https://arxiv.org/abs/2502.01951">Positional bias in LLMs (MIT)</a><span class="source-note">Further evidence on where models place attention in retrieved passages.</span></li>
-      </ul>
+    <div class="references">
+      <div class="references-label">References</div>
+      <ol>
+        <li id="ref1">Cloudflare — <a href="https://blog.cloudflare.com/markdown-for-agents/">Markdown for agents</a> (~80% token reduction with no loss of usable information). <a href="#cite1" class="backref">&#8617;</a></li>
+        <li id="ref2">Liu et al. — <a href="https://arxiv.org/abs/2307.03172">Lost in the Middle</a> (Stanford / UC Berkeley). <a href="#cite2" class="backref">&#8617;</a></li>
+        <li id="ref3">Positional bias in LLMs — <a href="https://arxiv.org/abs/2502.01951">MIT study</a>. <a href="#cite3" class="backref">&#8617;</a></li>
+        <li id="ref4">Kevin Indig — <a href="https://www.growthmemo.com/">Growth Memo</a>, AI citation analysis (Feb 2026; 44.2% of citations from the first third across 1.2M responses). <a href="#cite4" class="backref">&#8617;</a></li>
+      </ol>
     </div>
 
     <nav class="lesson-foot">

@@ -669,55 +669,6 @@ h3.section-h {
   background: var(--lavender);
 }
 
-/* Go deeper / references section */
-.go-deeper {
-  margin-top: 36px;
-  padding: 24px 28px;
-  background: var(--mint-soft);
-  border-radius: 12px;
-}
-.go-deeper-label {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  color: var(--gray-mid);
-  margin-bottom: 14px;
-}
-.go-deeper ul {
-  list-style: none;
-  padding: 0;
-}
-.go-deeper li {
-  padding: 9px 0 9px 22px;
-  position: relative;
-  font-size: 14.5px;
-  line-height: 1.5;
-  border-bottom: 1px solid #D5E8DC;
-}
-.go-deeper li:last-child { border-bottom: 0; padding-bottom: 0; }
-.go-deeper li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  top: 9px;
-  color: var(--purple);
-  font-weight: 700;
-}
-.go-deeper a {
-  color: var(--near-black);
-  text-decoration: none;
-  font-weight: 600;
-}
-.go-deeper a:hover { color: var(--purple); text-decoration: underline; }
-.go-deeper .source-note {
-  display: block;
-  color: var(--gray-mid);
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 2px;
-}
-
 /* Inline footnote markers + references list */
 .fn {
   font-size: 0.7em;

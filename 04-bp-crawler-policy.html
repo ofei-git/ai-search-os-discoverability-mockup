@@ -112,9 +112,11 @@
       <div class="diagram-caption">The two paths AI systems use to reach your content. Block either crawler and you drop out of that path.</div>
     </div>
 
-    <p>Deliberation matters because the right answer isn't universal. A medical publisher might block training-time crawlers (concerned about content being reproduced without context) while keeping retrieval-time fetches open (so users can find specific articles). A content marketing site might allow everything (to maximize citation). Both are valid stances. The failure mode is making no decision — defaulting to whatever robots.txt was written before AI crawlers existed.</p>
+    <p>Deliberation matters because the right answer isn't universal. A medical publisher might block training-time crawlers (concerned about content being reproduced without context) while keeping retrieval-time fetches open (so users can find specific articles). A content marketing site might allow everything (to maximize citation). Both are valid stances.</p>
 
-    <p>The crawler documentation is public: <a href="https://platform.openai.com/docs/bots">OpenAI's GPTBot</a>, <a href="https://support.anthropic.com/en/articles/8896518">Anthropic's ClaudeBot</a>, <a href="https://docs.perplexity.ai/guides/bots">Perplexity's PerplexityBot</a>, and <a href="https://commoncrawl.org/ccbot">Common Crawl's CCBot</a> all respect robots.txt. Independent tracking from <a href="https://originality.ai/ai-bot-blocking">Originality.ai's bot block report</a> shows rising publisher blocks against these crawlers; brands that maintain deliberate access policies continue to appear in cross-platform citation studies.</p>
+    <p>The failure mode is making no decision — defaulting to whatever robots.txt was written before AI crawlers existed.</p>
+
+    <p>The crawler documentation is public — every major AI bot publishes its user-agent name and robots.txt behavior.<sup class="fn"><a href="#ref1" id="cite1">1</a></sup> Independent tracking from Originality.ai shows rising publisher blocks against these crawlers<sup class="fn"><a href="#ref2" id="cite2">2</a></sup>; brands that maintain deliberate access policies continue to appear in cross-platform citation studies.</p>
 
     <h3 class="section-h">How to apply</h3>
     <ul class="checklist">
@@ -128,17 +130,18 @@
     <div class="watch">
       <ul>
         <li>Some AI bots fetch for training, others for live retrieval. You can allow one and not the other. The deliberation is per-bot and per-purpose.</li>
+        <li>A policy only works if it's honored. Some crawlers have been caught using undeclared user-agents to bypass robots.txt directives<sup class="fn"><a href="#ref3" id="cite3">3</a></sup> — worth monitoring your server logs, not just trusting the policy.</li>
         <li>Access is one part of the picture. Even with the right policy in place, content still has to be discoverable, well-structured, and worth retrieving before AI systems cite it.</li>
       </ul>
     </div>
 
-    <div class="go-deeper">
-      <div class="go-deeper-label">Go deeper</div>
-      <ul>
-        <li><a href="https://platform.openai.com/docs/bots">OpenAI — GPTBot &amp; crawler documentation</a><span class="source-note">Official user-agent names and robots.txt behavior.</span></li>
-        <li><a href="https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/">Cloudflare — Perplexity's stealth crawling</a><span class="source-note">Why crawler policy enforcement isn't always straightforward.</span></li>
-        <li><a href="https://originality.ai/ai-bot-blocking">Originality.ai — AI bot blocking report</a><span class="source-note">Rolling data on how many publishers block AI crawlers.</span></li>
-      </ul>
+    <div class="references">
+      <div class="references-label">References</div>
+      <ol>
+        <li id="ref1">Crawler documentation: <a href="https://platform.openai.com/docs/bots">OpenAI GPTBot</a>, <a href="https://support.anthropic.com/en/articles/8896518">Anthropic ClaudeBot</a>, <a href="https://docs.perplexity.ai/guides/bots">Perplexity PerplexityBot</a>, <a href="https://commoncrawl.org/ccbot">Common Crawl CCBot</a>. <a href="#cite1" class="backref">&#8617;</a></li>
+        <li id="ref2">Originality.ai — <a href="https://originality.ai/ai-bot-blocking">AI bot blocking report</a>. <a href="#cite2" class="backref">&#8617;</a></li>
+        <li id="ref3">Cloudflare — <a href="https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/">Perplexity is using stealth, undeclared crawlers to evade no-crawl directives</a>. <a href="#cite3" class="backref">&#8617;</a></li>
+      </ol>
     </div>
 
     <nav class="lesson-foot">
